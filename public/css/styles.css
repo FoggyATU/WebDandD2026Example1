@@ -1,20 +1,250 @@
-html, body {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Comic+Relief:wght@400;700&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --header-color: bisque;
+    --text-color: rgb(51, 39, 26);
+    --inactive-text-color: rgb(141, 123, 100);
+    --active-link-color: rgb(104, 89, 69);
+    --page-color: rgb(255, 246, 235);
 }
 
-nav ul {
-    list-style: none; 
-    padding-left:0;
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(0,50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
 }
-nav li {
-    display:inline;
 
+body{
+    margin: 0;
+    overflow: auto;
+    font-family: "Comic Relief", system-ui;
+    color: var(--text-color);
+    width: 70%;
+    margin: auto;
+    background-image: linear-gradient(to bottom, var(--inactive-text-color), white 70%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.active {
-    color :white;
-    background-color:green;
-    padding:0.5em;
 
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    color: var(--inactive-text-color);
+    font-weight: 600;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--inactive-text-color);
+    transition: all 300ms;
+}
+
+nav ul li a:hover{
+    color: var(--text-color);
+}
+
+nav ul{
+    padding: 0;
+}
+
+#activeLink{
+    color: var(--active-link-color);
+    text-decoration: underline;
+}
+
+#logo{
+    width: 100px;
+    float: right;
+}
+
+header h1{
+  display: inline;
+}
+
+main{
+    background-color:  var(--page-color);
+    padding-bottom: 10px;
+}
+
+section{
+    padding-left: 10px;
+    padding-right: 10px;
+    animation: fadeIn 0.3s ease-out;
+    background-color:  var(--page-color);
+    text-align: justify;
+}
+
+article{
+    animation: fadeIn 0.3s ease-out;
+}
+
+header{
+    padding: 10px;
+    padding-left: 20px;
+    background-color: var(--header-color);
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    font-size: small;
+    background-color: var(--header-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer p{
+    padding: 0;
+    margin: 0;
+}
+
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-bottom: 20px;
+}
+
+.flexbox img{
+    max-width: 200px;
+    margin: 20px;
+    transition: all 200ms;
+}
+
+.flexbox img:hover{
+    transform: translate(0px,-10px) rotate(2deg);
+}
+
+.imageWithText{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+    gap: 10%;
+    text-align: justify;
+    max-width: 100%;
+    margin-right: 10px;
+}
+
+.imageWithText img{
+    height: 30%;
+    margin-left: 10px;
+}
+
+.imageWithText aside{
+    width:50%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.newspaper{
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: 4px solid var(--header-color);
+    padding: 10px;
+}
+
+form{
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+input[type="submit"], input[type="reset"]{
+    width: 200px;
+    margin-bottom: 10px;
+    background-color: var(--header-color);
+    transition: all 0.2s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    transform: scale(1.05);
+}
+
+label{
+    float: left;
+    text-align: left;
+    min-width: 100px;
+}
+
+.required{
+    color: rgb(239, 29, 29);
+    font-weight: 1000;
+}
+
+textarea{
+    resize: none;
+}
+
+.smallText{
+    color: var(--inactive-text-color);
+    font-size: small;
+    margin-top: -5px;
+}
+
+.imageWithMap{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10%;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.imageGallery{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1%;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.imageGallery img{
+    max-width: 200px;
+    transition: ease-in-out 0.2s;
+    border: 3px solid var(--header-color);
+}
+
+.imageWithMap .imageGallery img:hover{
+    transform: scale(2.0);
+    z-index: 1;
+}
+
+table{
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+td,th{
+    text-align: center;
+    border: 5px solid var(--inactive-text-color);
+    padding: 10px;
+}
+
+.youtube_videos iframe{
+    width: 50%;
+    margin-left: 25%;
+    padding: 0;
+}
+
+h2{
+    font-size: large;
 }

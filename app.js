@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
   // set active for navigation
   state={home:true}
   // set specifics for <head>
-  head={title: "Home - Week 1"}
+  head={title: "Home"}
   // pass object to to render in "index"
   res.render('index', {state, head});
   // send this to terminal where node app is running
@@ -47,10 +47,31 @@ app.get('/', (req, res) => {
 // contact route
 app.get('/contact', (req, res) => {
     state={contact : true}
-    head={title:"Contact - Week 1"}
+    head={title:"Contact"}
     res.render('contact', { state, head});
     console.log('contact')
   });
+
+app.get('/music', (req, res) => {
+  state={music:true}
+  head={title:"Music"}
+  res.render('music', {state, head});
+  console.log('music')
+});
+
+app.get('/programming', (req, res) => {
+  state={programming:true}
+  head={title:"Programming"}
+  res.render('programming', {state, head});
+  console.log('programming')
+});
+
+app.get('/photos', (req, res) => {
+  state={photography:true}
+  head={title:"Photos"}
+  res.render('photos', {state, head});
+  console.log('photos')
+});
 
 
 // Start the server

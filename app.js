@@ -73,6 +73,13 @@ app.get('/photos', (req, res) => {
   console.log('photos')
 });
 
+app.get('/creatures', (req, res) => {
+  state={creatures:true}
+  head={title:"Creatures"}
+  res.render('creatures', {state, head});
+  console.log('creatures')
+});
+
 
 // Start the server
 app.listen(3000, () => {

@@ -248,3 +248,32 @@ td,th{
 h2{
     font-size: large;
 }
+
+.cardGalleryRoot{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10%;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.cardGallery{
+   display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1%;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.cardGalleryRoot h2{
+    text-align: center;
+}
+
+.cardGallery img{
+    max-width: 200px;
+    transition: ease-in-out 0.2s;
+}

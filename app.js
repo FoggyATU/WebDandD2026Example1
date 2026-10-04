@@ -73,6 +73,13 @@ app.get('/photos', (req, res) => {
   console.log('photos')
 });
 
+app.get('/responsiveexample', (req, res) => {
+  state={responsiveexample:true}
+  head={title:"Responsive Page Example"}
+  res.render('responsiveexample', {state, head});
+  console.log('responsiveexample')
+});
+
 
 // Start the server
 app.listen(3000, () => {

@@ -277,3 +277,55 @@ h2{
     max-width: 200px;
     transition: ease-in-out 0.2s;
 }
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* PHONE */
+@media (max-width: 768px) {
+
+    #logo{
+        width: 50px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+
+    header nav ul {
+        list-style: none;
+        background-color: var(--page-color);
+        opacity: 0.8;
+    }
+
+    header nav li {
+        border-top: 1px solid var(--active-link-color);
+    }
+
+    header nav ul li{
+        width: 100%;
+    }
+
+    header nav a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+    }
+}
